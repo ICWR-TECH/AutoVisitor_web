@@ -26,12 +26,12 @@ for($i=0;$i<$visitor;$i++){
 	$us=rand(0,999);
 		$ch = curl_init();
 		CURL_SETOPT($ch, CURLOPT_URL, $web);
-		CURL_SETOPT($ch, CURLOPT_HTTPHEADER, array('Referer: '.$referer[$us],'User-Agent: '.$exp_user[$i]));
+		CURL_SETOPT($ch, CURLOPT_HTTPHEADER, array('Referer: '.$referer[$cok],'User-Agent: '.$exp_user[$us]));
 		CURL_SETOPT($ch, CURLOPT_FOLLOWLOCATION, true);
 		CURL_SETOPT($ch, CURLOPT_SSL_VERIFYHOST, false);
 		CURL_SETOPT($ch, CURLOPT_SSL_VERIFYPEER, false);
 		CURL_SETOPT($ch, CURLOPT_RETURNTRANSFER, 1);
-		CURL_SETOPT($ch, CURLOPT_USERAGENT, $exp_user[$us]);
+//		CURL_SETOPT($ch, CURLOPT_USERAGENT, $exp_user[$us]);
 		$result = curl_exec($ch);
                 $info=curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
 		curl_close($ch);
